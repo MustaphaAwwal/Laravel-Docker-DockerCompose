@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  laravel:
+    build: .
+    ports:
+    - "8080:80"
+    volumes:
+      - awwal_host-logs:/var/www/html/
+  db:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: laravel-mysql
+    volumes:
+      - awwal_mysql_data:/var/lib/mysql
+volumes:
+  awwal_mysql_data:
+  awwal_host-logs:
