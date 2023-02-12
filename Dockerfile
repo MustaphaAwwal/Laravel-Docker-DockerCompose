@@ -28,4 +28,5 @@ COPY routes/web.php routes/web.php
 # configure apache properly
 RUN a2dissite 000-default.conf 
 RUN a2ensite laravel-realworld-example-app.conf 
+RUN a2enmod rewrite
 CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]

@@ -5,7 +5,7 @@ services:
     ports:
     - "8080:80"
     volumes:
-      - awwal_host-logs:/var/www/html/
+      - awwal_host:/var/www/html/
   db:
     image: mysql
     ports:
@@ -14,7 +14,6 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: laravel-mysql
     volumes:
-      - awwal_mysql_data:/var/lib/mysql
+      - ./mysql_logs:/var/lib/mysql
 volumes:
-  awwal_mysql_data:
-  awwal_host-logs:
+  awwal_host:
