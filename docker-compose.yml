@@ -6,6 +6,7 @@ services:
     - "8080:80"
     volumes:
       - awwal_host:/var/www/html/
+      - ./apache_logs:/var/log/apache2
   db:
     image: mysql
     ports:
